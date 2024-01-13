@@ -40,24 +40,24 @@ def predict():
 	upper_bound = round(forecast.yhat_upper[0], 2)
 	bound = round(((upper_bound - actual_forecast) + (actual_forecast - lower_bound) / 2), 2)
 
-	summary = master_prophet.info["summary"]
-	country = master_prophet.info["country"]
-	sector = master_prophet.info["sector"]
-	website = master_prophet.info["website"]
-	min_date = master_prophet.info["min_date"]
-	max_date = master_prophet.info["max_date"]
+	# summary = master_prophet.info["summary"]
+	# country = master_prophet.info["country"]
+	# sector = master_prophet.info["sector"]
+	# website = master_prophet.info["website"]
+	# min_date = master_prophet.info["min_date"]
+	# max_date = master_prophet.info["max_date"]
 
 	forecast_date = master_prophet.forecast_date.date()
 
 	return render_template(
 		"output.html",
 		ticker = ticker.upper(),
-		sector = sector,
-		country = country,
-		website = website,
-		summary = summary,
-		min_date = min_date,
-		max_date = max_date,
+		# sector = sector,
+		# country = country,
+		# website = website,
+		# summary = summary,
+		# min_date = min_date,
+		# max_date = max_date,
 		forecast_date = forecast_date,
 		forecast = actual_forecast,
 		bound = bound
